@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>let const</title>
+</head>
+
+<body>
+  <div></div>
+
+
+  <script>
+    // ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。
+    //if(true) {
+    //   let a = 10;
+    //   var b = 20;
+    // }
+    // console.log(a);
+    // console.log(b);
+
+    // for循环的计数器，就很合适使用let命令。
+    // for (let i = 0; i < 10; i++) {
+    //   console.log("hh");
+    // }
+    // console.log(i);
+
+    var a = [];
+    for (var i = 0; i < 10; i++) {
+      a[i] = function () {
+        console.log(i);
+      }
+    }
+    a[6](); //10
+
+    var b = [];
+    for (let i = 0; i < 10; i++) {
+      b[i] = function () {
+        console.log(i);
+      }
+    }
+    b[6](); //6
+
+    // let不存在变量提升
+    // console.log(letc);//报错
+    // let letc = 100;
+    // console.log(varc); //undefined
+    // var varc = 200;
+
+    // 暂时性死区
+    // var temp = 123;
+    // if (true) {
+    //   temp = 'abc';
+    //   let temp; //报错
+    // }
+    // if (true) {
+    //   aa = 111;
+    //   console.log(aa);//报错
+    //   let aa;
+    //   console.log(aa);//undefined
+    //   aa = 333;
+    //   console.log(aa); //333
+    // }
+    // 上面代码中，在let命令声明变量aa之前，都属于变量aa的“死区”。
+
+    // 如果没声明，typeof是不会报错的
+    console.log(typeof x) //undefined
+
+    // 变量一定要在声明之后使用，否则就报错。
+    // console.log(typeof x)//报错
+    // let x;
+  </script>
+</body>
+
+</html>
